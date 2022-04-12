@@ -4,10 +4,10 @@ on:
   pull_request:
     types: [closed]
 jobs:
-  update_release_draft:
+  RunLabel:
     runs-on: ubuntu-latest
 
-    if: (github.event.pull_request.merged == true && github.event.label.name == 'runAction')
+    if: (github.event.label.name == 'runAction')
 
     steps:
       - run: echo "Hello World!"
