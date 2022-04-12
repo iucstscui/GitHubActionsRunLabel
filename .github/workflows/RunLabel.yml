@@ -1,0 +1,14 @@
+name: RunLabel
+
+on:
+  pull_request:
+    types: [synchronize]
+jobs:
+  update_release_draft:
+    runs-on: ubuntu-latest
+
+    if: |
+        (github.event.label.name == 'runAction')
+
+    steps:
+      - run: echo "Hello World!"
